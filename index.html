@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Login</title>
+    <link rel="stylesheet" href="Assets/style/style.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+        body {
+            padding: 0;
+            padding-top: 80px;
+            margin: 0;
+            background: rgb(241, 240, 240);
+        }
+    </style>
+    <script
+    src="https://code.jquery.com/jquery-3.4.1.js"
+    integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
+    crossorigin="anonymous"></script>
+    <script src="Assets/js/ux.js"></script>
+</head>
+<body>
+    <div id="navbar">
+        <a href="#home"><img alt="logo" src="Assets/img/logo.png"/></a>
+        
+    </div>
+    <div class="loginform">
+        <center>
+            <label style="color: tomato; font-size: 14px;" id="txtErrMessage"></label>
+        </center>
+        <h1>Login</h1><br><br>
+            <div class="floating-label">      
+                <input class="floating-input" type="text" placeholder=" " id="txtPhoneNumber">
+                <span class="highlight"></span>
+                <label>PHONE NUMBER</label>
+              </div>
+              <br><br>
+              <div class="floating-label">      
+                <input class="floating-input" type="password" placeholder=" " id="txtPassword">
+                <span class="highlight"></span>
+                <label>PASSWORD</label>
+              </div>
+              <div class="checkdiv">
+                <label id="lblcheck">
+                    <label ><input type="checkbox" name="" id="">Remember me</label>
+                </label>
+                <label id="lblrem">
+                    <label >Forgot Password? <a href="forgotpassword.html">Click here</a></label>
+                </label>
+              </div>
+              <br><br><br>
+              <center>
+                <div class="reg">
+                    <input class="btnsignin" type="button" value="Sign In" id="btnLogin">
+                  </div>
+              </center>
+              <br><br><br>
+              <center>
+                <div class="reg">
+                    <label >Don't have an account?</label>
+                    <a class="btnsignup" type="button" href="register.html">Create One</a>
+                  </div> 
+              </center>
+        
+    </div>
+    <center>
+        <p>&copy; 2020, Ventures234 LTD</p>
+        <p>Contact information: <a href="mailto:contactus@ventures234.com">
+            contactus@ventures234.com</a>.</p>
+    </center>
+</body>
+</html>

@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Add Tax Break</title>
+    <link rel="stylesheet" href="Assets/style/style.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="Assets/js/pagination.js"></script>
+    <script
+    src="https://code.jquery.com/jquery-3.4.1.js"
+    integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
+    crossorigin="anonymous"></script>
+    <script src="Assets/js/pagination.js"></script>
+    <style>
+        body {
+            padding: 0;
+            padding-top: 92px;
+            margin: 0;
+            background: rgb(241, 240, 240);
+            color: #374147;
+            font: 14px "Open Sans",Helvetica,Arial,sans-serif;
+            -webkit-font-smoothing: antialiased;
+            line-height: 1;
+            width: 100%;
+        }
+        div,ul,ol,li {
+            margin: 0;
+            padding: 0;
+        }
+
+        article,aside,figure,footer,header,hgroup,nav,section {
+            display: block;
+        }
+
+        * {
+            -webkit-box-sizing: border-box;
+            -moz-box-sizing: border-box;
+            box-sizing: border-box;
+        }
+
+        html {
+            -webkit-font-smoothing: antialiased;
+        }
+
+        a {
+            color: #BA0707;
+            text-decoration: none;
+        }
+
+        a:hover {
+            color: #BA0707;
+        }
+
+    </style>
+</head>
+<body>
+  <div id="navbar">
+    <a href="dashboard.html"><img alt="logo" src="Assets/img/logo.png"/></a>
+    <div class="header-right">
+        
+        <a class="active" href="#">
+            <div id="ex1">
+                <i class="fa fa-bell fa-2x fa-border icon-grey badge"></i>
+              </div>
+        </a>
+      </div>
+</div>
+<div class="menudiv">
+  <nav>
+      <a id="resp-menu" class="responsive-menu" href="#"><i class="fa fa-reorder"></i> Menu</a>    
+         <ul class="menu">
+         <li><a class="homer" href="dashboard.html"><i class="fa fa-home"></i> Dashboard</a>
+         </li>
+        <li><a  href="#"><i class="fa fa-users"></i> User Management</a>
+          <ul class="sub-menu">
+              <li><a href="manageuser.html">Manage User</a></li>
+              <li><a href="createagent.html">Create Agent</a>
+              </ul>
+        </li>
+        <li><a  href="#"><i class="fa fa-bar-chart-o"></i> E-Assessment</a>
+        <ul class="sub-menu">
+         <li><a href="#">Assessment</a>
+          <ul>
+          <li><a href="assessment.html">Assessment</a></li>
+             <li><a href="asummary.html">Assessment Summary</a></li>
+          <li><a href="pendingassessment.html">Pending Assessment</a></li>
+             <li><a href="viewassessment.html">View Assessment</a></li>
+          </ul>
+         </li>
+           <li><a href="#">Rules</a>
+          <ul>
+          <li><a href="createrules.html">Create Rules</a></li>
+             <li><a href="bulkuploadrule.html">Bulk Upload Rules</a></li>
+          </ul>
+         </li>
+         <li><a href="#">MDA</a>
+        <ul>
+        <li><a href="createmda.html">Create MDA</a></li>
+           <li><a href="bulkuploadmda.html">Bulk Upload MDA</a></li>
+        <li><a href="managemda.html">Manage MDA</a></li>	
+        </ul>
+       </li>
+       <li><a href="#">Payment</a>
+      <ul>
+      <li><a href="createpaymentitem.html">Create Payment Item</a></li>
+         <li><a href="managepay.html">Manage Payment Item</a></li>
+      </ul>
+     </li>
+         </ul>
+        </li>
+        <li><a  href="#"><i class="fa fa-money"></i> Payments</a>
+          <ul class="sub-menu">
+              <li><a href="#">User Payment</a>
+               <ul>
+               <li><a href="makepayment.html">Make Payment</a></li>
+                  <li><a href="paymenthistory.html">Payment History</a></li>
+               </ul>
+              </li>
+                <li><a href="#">Agent Payment</a>
+               <ul>
+               <li><a href="agentwallet.html">Agent Wallet</a></li>
+               </ul>
+              </li>
+              </ul>
+      </li>
+          <li><a  href="#"><i class="fa fa-exchange"></i> Returns Management</a>
+        <ul class="sub-menu">
+         <li><a href="userpaybehaviour.html">User Payment Behaviour</a></li>
+         <li><a href="besttaxpayers.html">Admin-Best Tax Payers</a>
+         </li>
+         </ul>
+        </li>
+        <li><a  href="#"><i class="fa fa-bandcamp"></i> Compliance and Dispute Resolution</a>
+          <ul class="sub-menu">
+              <li><a href="#">Flag</a>
+               <ul>
+               <li><a href="addflag.html">Add Flag</a></li>
+               </ul>
+              </li>
+                <li><a href="#">Ticket</a>
+               <ul>
+                  <li><a href="createticket.html">Create Tickets</a></li>
+               </ul>
+              </li>
+              </ul>
+      </li>
+        <li><a  href="#"><i class="fa fa-sitemap"></i> Reports</a>
+          <ul class="sub-menu">
+              <li><a href="graphs.html">Graph</a></li>
+              <li><a href="mynotifications.html">Notification</a>
+              </li>
+                <li><a href="managestakeholders.html">Manage Stakeholders</a>
+              </li>
+              </ul>
+      </li>
+        </ul>
+        </nav>
+</div>
+    <div class="viewassess-wrapper">
+        <h1>Add Tax Break</h1>
+        
+        <div class="viewassess-contents">
+            <div class="container-table1000">
+                
+                <div class="wrap-table1000">
+                    
+                        <div class="table">
+    
+                            <div class="row header">
+                                <div class="cell">
+                                    User
+                                </div>
+                                <div class="cell">
+                                    Total Amount Paid
+                                </div>
+                                <div class="cell">
+                                    Amount
+                                </div>
+                                <div class="cell">
+                                    Description
+                                </div>
+                                <div class="cell">
+                                    Action
+                                </div>
+                            </div>
+                            
+                            <div class="row">
+                                <div class="cell" data-title="User">
+                                    U12345
+                                </div>
+                                <div class="cell" data-title="Total Amount Paid">
+                                    $10,000
+                                </div>
+                                <div class="cell" data-title="Amount" style="padding-right: 20px;">
+                                    <input type="text" placeholder="$XX,XXX" style="height: 40px; border-radius: 5px; border-style: groove; padding-left: 5px; width: 100%;">
+                                </div>
+                                <div class="cell" data-title="Description" style="padding-right: 20px;">
+                                    <input type="text" placeholder="..." style="height: 40px; border-radius: 5px; border-style: groove; padding-left: 5px; width: 100%;">
+                                </div>
+                                <div class="cell" data-title="Action">
+                                    <input class="btnsignin" type="button" value="Submit" style="margin-right: 20px;">
+                                </div>
+                            </div>
+                        </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <div class="footer">
+      <div class="contain">
+      <div class="col">
+        <h1>Company</h1>
+        <ul>
+          <li onclick="window.location.href='ventures234.com'">Ventures 234</li>
+        </ul>
+      </div>
+      <div class="col">
+        <h1>Dashboard</h1>
+        <ul>
+          <li onclick="window.location.href='manageuser.html'">Manage User</li>
+          <li onclick="window.location.href='createagent.html'">Create Agent</li>
+          <li onclick="window.location.href='createrules.html'">Create Rules</li>
+          <li onclick="window.location.href='createmda.html'">Create MDA</li>
+          <li onclick="window.location.href='createpaymentitem.html'">Create Payment Items</li>
+          <li onclick="window.location.href='addstakeholder.html'">Add Stakeholders</li>
+        </ul>
+      </div>
+      <div class="col">
+        <h1>Returns Management</h1>
+        <ul>
+          <li onclick="window.location.href='userpaybehaviour.html'">Payment Behaviour</li>
+          <li onclick="window.location.href='besttaxpayers.html'">Best tax Payers</li>
+        </ul>
+      </div>
+      <div class="col">
+        <h1>Resources</h1>
+        <ul>
+          <li>This Resource</li>
+          <li>That Resource</li>
+          <li>The Other Resource</li>
+        </ul>
+      </div>
+      <div class="col">
+        <h1>Support</h1>
+        <ul>
+          <li>Contact us</li>
+          <li>Web chat</li>
+          <li>Raise ticket</li>
+        </ul>
+      </div>
+      <div class="col social">
+        <h1>Social</h1>
+        <ul>
+          <li><i class="fa fa-facebook"></i></li>
+          <li><i class="fa fa-twitter"></i></li>
+          <li><i class="fa fa-telegram"></i></li>
+          <li><i class="fa fa-instagram"></i></li>
+        </ul>
+      </div>
+    <div class="clearfix"></div>
+    </div>
+    </div>
+</body>
+</html>

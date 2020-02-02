@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Register</title>
+    <link rel="stylesheet" href="Assets/style/style.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+        body {
+            padding: 0;
+            padding-top: 80px;
+            margin: 0;
+            background: white;
+        }
+    </style>
+    <script
+    src="https://code.jquery.com/jquery-3.4.1.js"
+    integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
+    crossorigin="anonymous"></script>
+    <script src="Assets/js/ux.js"></script>
+</head>
+<body>
+    <div id="navbar">
+        <a href="#home"><img alt="logo" src="Assets/img/logo.png"/></a>
+        
+    </div>
+    <div class="regform">
+        <fieldset>
+            <legend>Register</legend>
+            <h2><span>Personal Details</span></h2><br>
+            <center>
+                <label style="color: tomato; font-size: 14px;" id="txtDErrMessage"></label>
+            </center>
+            <div class="floating-label">      
+                <input class="floating-input" type="text" placeholder=" " id="txtPhoneNumber">
+                <span class="highlight"></span>
+                <label>Phone Number</label>
+            </div>
+            <div class="floating-label">      
+                <input class="floating-input" type="text" placeholder=" " id="txtFName">
+                <span class="highlight"></span>
+                <label>First Name</label>
+            </div>
+            <div class="floating-label">      
+                <input class="floating-input" type="text" placeholder=" " id="txtLName">
+                <span class="highlight"></span>
+                <label>Last Name</label>
+            </div>
+            <div class="floating-label">      
+                <input class="floating-input" type="text" placeholder=" " id="txtOName">
+                <span class="highlight"></span>
+                <label>Other Names</label>
+            </div>
+            <div class="floating-label">      
+                <input class="floating-input" type="text" placeholder=" " id="txtAOO">
+                <span class="highlight"></span>
+                <label>Address of Origin</label>
+            </div>
+            <div class="floating-label">      
+                <input class="floating-input" type="text" placeholder=" " id="txtLGA">
+                <span class="highlight"></span>
+                <label>Local Government Area</label>
+            </div>
+            <div class="floating-label">      
+                <input class="floating-input" type="text" placeholder=" " id="txtSOO">
+                <span class="highlight"></span>
+                <label>State of Origin</label>
+            </div>
+            <div class="floating-label">      
+                <input class="floating-input" type="text" placeholder=" " id="txtNationality">
+                <span class="highlight"></span>
+                <label>Nationality</label>
+            </div>
+            <br><br><br>
+            <h2><span>Contact Details</span></h2><br>
+            <center>
+                <label style="color: tomato; font-size: 14px;" id="txtCDErrMessage"></label>
+            </center>
+            <div class="floating-label">      
+                <input class="floating-input" type="text" placeholder=" " id="txtHPhone">
+                <span class="highlight"></span>
+                <label>Home Phone</label>
+            </div>
+            <div class="floating-label">      
+                <input class="floating-input" type="text" placeholder=" " id="txtCAddress">
+                <span class="highlight"></span>
+                <label>Current Address</label>
+            </div>
+            <div class="floating-label">  
+                <select class="floating-select" onclick="this.setAttribute('value', this.value);" value="" id="txtCALGA">
+                  <option value=""></option>
+                  <option value="1">Alabama</option>
+                  <option value="2">Boston</option>
+                  <option value="3">Ohaio</option>
+                  <option value="4">New York</option>
+                  <option value="5">Washington</option>
+                </select>
+                <span class="highlight"></span>
+                <label>Current Address LGA</label>
+              </div>
+              <div class="floating-label">  
+                  <select class="floating-select" onclick="this.setAttribute('value', this.value);" value="" id="txtCState">
+                    <option value=""></option>
+                    <option value="1">Alabama</option>
+                    <option value="2">Boston</option>
+                    <option value="3">Ohaio</option>
+                    <option value="4">New York</option>
+                    <option value="5">Washington</option>
+                  </select>
+                  <span class="highlight"></span>
+                  <label>Current State</label>
+                </div>
+            <br><br><br>
+            <h2><span>Authentication</span></h2><br>
+            <center>
+                <label style="color: tomato; font-size: 14px;" id="txtAuthErrMessage"></label>
+            </center>
+            <div class="floating-label">      
+                <input class="floating-input" type="password" placeholder=" " id="txtPassword">
+                <span class="highlight"></span>
+                <label>Password</label>
+            </div>
+            <div class="floating-label">      
+                <input class="floating-input" type="password" placeholder=" " id="txtCPassword">
+                <span class="highlight"></span>
+                <label>Confirm Password</label>
+            </div>
+            <div class="floating-label">      
+                <input class="floating-input" type="file" placeholder=" " id="txtPassport">
+                <span class="highlight"></span>
+                <label>Passport</label>
+            </div>
+            <div class="floating-label">      
+                <input class="floating-input" type="file" placeholder=" " id="txtIDCard">
+                <span class="highlight"></span>
+                <label>Id Card</label>
+            </div><br><br><br>
+            <div class="reg">
+                <label style="margin-bottom: 20px;">Already have an account?<a class="btnsignup" type="button" href="login.html">Sign In</a></label>
+                    
+                <input class="btnsignin" type="button" value="Sign Up" id="btnRegister">
+            </div>
+        </fieldset>
+    </div>
+    <footer class="regfoot">
+        <center>
+            <p>&copy; 2020, Ourcompany LTD</p>
+            <p>Contact information: <a href="mailto:contactus@ventures234.com">
+                contactus@ventures234.com</a>.</p>
+        </center>
+    </footer>
+</body>
+</html>

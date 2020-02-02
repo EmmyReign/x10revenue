@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Edit User</title>
+    <link rel="stylesheet" href="Assets/style/style.css">
+    <style>
+        body {
+            padding: 0;
+            padding-top: 80px;
+            margin: 0;
+            background: white;
+        }
+    </style>
+</head>
+<body>
+  <div id="navbar">
+    <a href="dashboard.html"><img alt="logo" src="Assets/img/logo.png"/></a>
+    
+</div>
+    <div class="regform">
+        <fieldset>
+            <legend>Edit User</legend>
+            <h2><span>Personal Details</span></h2><br>
+            <div class="floating-label">      
+                <input class="floating-input" type="text" placeholder=" ">
+                <span class="highlight"></span>
+                <label>Phone Number</label>
+            </div>
+            <div class="floating-label">      
+                <input class="floating-input" type="text" placeholder=" ">
+                <span class="highlight"></span>
+                <label>First Name</label>
+            </div>
+            <div class="floating-label">      
+                <input class="floating-input" type="text" placeholder=" ">
+                <span class="highlight"></span>
+                <label>Last Name</label>
+            </div>
+            <div class="floating-label">      
+                <input class="floating-input" type="text" placeholder=" ">
+                <span class="highlight"></span>
+                <label>Other Names</label>
+            </div>
+            <div class="floating-label">      
+                <input class="floating-input" type="text" placeholder=" ">
+                <span class="highlight"></span>
+                <label>Address of Origin</label>
+            </div>
+            <div class="floating-label">      
+                <input class="floating-input" type="text" placeholder=" ">
+                <span class="highlight"></span>
+                <label>Local Government Area</label>
+            </div>
+            <div class="floating-label">      
+                <input class="floating-input" type="text" placeholder=" ">
+                <span class="highlight"></span>
+                <label>State of Origin</label>
+            </div>
+            <div class="floating-label">      
+                <input class="floating-input" type="text" placeholder=" ">
+                <span class="highlight"></span>
+                <label>Nationality</label>
+            </div>
+            <br><br><br>
+            <h2><span>Contact Details</span></h2><br>
+            <div class="floating-label">      
+                <input class="floating-input" type="text" placeholder=" ">
+                <span class="highlight"></span>
+                <label>Home Phone</label>
+            </div>
+            <div class="floating-label">      
+                <input class="floating-input" type="text" placeholder=" ">
+                <span class="highlight"></span>
+                <label>Current Address</label>
+            </div>
+            <div class="floating-label">  
+                <select class="floating-select" onclick="this.setAttribute('value', this.value);" value="">
+                  <option value=""></option>
+                  <option value="1">Alabama</option>
+                  <option value="2">Boston</option>
+                  <option value="3">Ohaio</option>
+                  <option value="4">New York</option>
+                  <option value="5">Washington</option>
+                </select>
+                <span class="highlight"></span>
+                <label>Current Address LGA</label>
+              </div>
+              <div class="floating-label">  
+                  <select class="floating-select" onclick="this.setAttribute('value', this.value);" value="">
+                    <option value=""></option>
+                    <option value="1">Alabama</option>
+                    <option value="2">Boston</option>
+                    <option value="3">Ohaio</option>
+                    <option value="4">New York</option>
+                    <option value="5">Washington</option>
+                  </select>
+                  <span class="highlight"></span>
+                  <label>Current State</label>
+                </div>
+            <br><br><br>
+            <h2><span>Attachment</span></h2><br>
+            <div class="container">
+                <ul class="responsive-table">
+                    <li class="table-row">
+                      <div class="col col-1" data-label="Attachment">Passport</div>
+                      <div class="col col-2" data-label="Passport">
+                        <div class="dropdown">
+                            <img src="Assets/img/sample.jpg" alt="" width="40" height="30">
+                            <div class="dropdown-content">
+                            <img src="Assets/img/sample.jpg" alt="" width="250" height="300">
+                            <div class="desc">Passport photograph</div>
+                            </div>
+                          </div>
+                      </div>
+                      <div class="col col-1" data-label="Attachment">ID Card</div>
+                      <div class="col col-2" data-label="ID Card">
+                        <div class="dropdown">
+                            <img src="Assets/img/sample.jpg" alt="" width="40" height="30">
+                            <div class="dropdown-content">
+                            <img src="Assets/img/sample.jpg" alt="" width="250" height="300">
+                            <div class="desc">Identification Card</div>
+                            </div>
+                          </div>
+                      </div>
+                    </li>
+                  </ul>
+            </div>
+            
+            <br><br><br>
+            <h2><span>Roles</span></h2><br>
+            <div class="container">
+                <ul class="responsive-table">
+                  <li class="table-header">
+                    <div class="col col-1">#</div>
+                    <div class="col col-2">Group</div>
+                    <div class="col col-3">Role</div>
+                    <div class="col col-4"> Status</div>
+                  </li>
+                  <li class="table-row">
+                    <div class="col col-1" data-label="#">42235</div>
+                    <div class="col col-2" data-label="Group">IT</div>
+                    <div class="col col-3" data-label="Role">Software Engineer</div>
+                    <div class="col col-4" data-label="Status">Active</div>
+                  </li>
+                  <li class="table-row">
+                    <div class="col col-1" data-label="#">42442</div>
+                    <div class="col col-2" data-label="Group">IT</div>
+                    <div class="col col-3" data-label="Role">Network Admin</div>
+                    <div class="col col-4" data-label="Status">Active</div>
+                  </li>
+                  <li class="table-row">
+                    <div class="col col-1" data-label="#">42257</div>
+                    <div class="col col-2" data-label="Group">IT</div>
+                    <div class="col col-3" data-label="Role">System Analyst</div>
+                    <div class="col col-4" data-label="Status">Active</div>
+                  </li>
+                  <li class="table-row">
+                    <div class="col col-1" data-label="#">42311</div>
+                    <div class="col col-2" data-label="Group">IT</div>
+                    <div class="col col-3" data-label="Role">Database Admin</div>
+                    <div class="col col-4" data-label="Status">Active</div>
+                  </li>
+                </ul>
+              </div>
+              <br><br><br>
+            <div class="reg">
+                <input class="btnsignin" type="button" value="Update">
+            </div>
+        </fieldset>
+    </div>
+    <footer class="regfoot">
+        <center>
+            <p>&copy; 2020, Ourcompany LTD</p>
+            <p>Contact information: <a href="mailto:ourmail@ourdomain.com">
+            ourmail@ourdomain.com</a>.</p>
+        </center>
+    </footer>
+</body>
+</html>

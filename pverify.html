@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="Assets/style/style.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>Verify Phone Number</title>
+    <style>
+        body {
+            padding: 0;
+            padding-top: 80px;
+            margin: 0;
+            background: rgb(241, 240, 240);
+        }
+    </style>
+    <script
+    src="https://code.jquery.com/jquery-3.4.1.js"
+    integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
+    crossorigin="anonymous"></script>
+    <script src="Assets/js/ux.js"></script>
+</head>
+<body>
+    <div id="navbar">
+        <a href="#home"><img alt="logo" src="Assets/img/logo.png"/></a>
+        
+    </div>
+    <div class="verifyform">
+        <center>
+            <label style="color: tomato; font-size: 14px;" id="txtPVErrMessage"></label>
+        </center>
+        <h1>Let's verify your number</h1><br><br>
+            <div class="floating-label">      
+                <input class="floating-input" type="text" placeholder=" " id="txtPhoneNumberCode">
+                <span class="highlight"></span>
+                <label>Enter code sent to your phone number</label>
+              </div>
+              
+              <center>
+                <div class="reg">
+                    <input class="btnsignin" type="button" value="Verify" id="btnVerify">
+                </div>
+              </center>
+              <br><br>
+              <div class="checkdiv">
+                <label id="lblcheck">
+                    <label ><input type="checkbox" name="" id="">Remember me</label>
+                </label>
+                <label id="lblrem">
+                    <label >Already a member? <a href="register">Sign In</a></label>
+                </label>
+              </div>
+              <div class="verifydivfoot">
+                <center>
+                    <label >Don't have an account?</label>
+                    <a class="btnsignup" type="button" href="register.html">Create One</a>
+                  </center>
+              </div>
+              
+        
+    </div>
+    <footer class="pvfoot">
+        <center>
+            <p>&copy; 2020, Ourcompany LTD</p>
+            <p>Contact information: <a href="mailto:contactus@ventures234.com">
+                contactus@ventures234.com</a>.</p>
+        </center>
+    </footer>
+</body>
+</html>

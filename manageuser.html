@@ -1,0 +1,589 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>User Management</title>
+    <link rel="stylesheet" href="Assets/style/style.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+        body {
+            padding: 0;
+            padding-top: 92px;
+            margin: 0;
+            background: rgb(241, 240, 240);
+            color: #374147;
+            font: 14px "Open Sans",Helvetica,Arial,sans-serif;
+            -webkit-font-smoothing: antialiased;
+            line-height: 1;
+            width: 100%;
+        }
+        div,ul,ol,li {
+            margin: 0;
+            padding: 0;
+        }
+
+        article,aside,figure,footer,header,hgroup,nav,section {
+            display: block;
+        }
+
+        * {
+            -webkit-box-sizing: border-box;
+            -moz-box-sizing: border-box;
+            box-sizing: border-box;
+        }
+
+        html {
+            -webkit-font-smoothing: antialiased;
+        }
+
+        a {
+            color: #BA0707;
+            text-decoration: none;
+        }
+
+        a:hover {
+            color: #BA0707;
+        }
+
+    </style>
+    <script
+    src="https://code.jquery.com/jquery-3.4.1.js"
+    integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
+    crossorigin="anonymous"></script>
+    <script src="Assets/js/pagination.js"></script>
+    <script src="Assets/js/ux.js"></script>
+</head>
+<body>
+    <div id="navbar">
+        <a href="dashboard.html"><img alt="logo" src="Assets/img/logo.png"/></a>
+        <div class="header-right">
+            
+            <a class="active" href="#">
+                <div id="ex1">
+                    <i class="fa fa-bell fa-2x fa-border icon-grey badge"></i>
+                  </div>
+            </a>
+          </div>
+    </div>
+    <div class="menudiv">
+      <nav>
+          <a id="resp-menu" class="responsive-menu" href="#"><i class="fa fa-reorder"></i> Menu</a>    
+             <ul class="menu">
+             <li><a class="homer" href="dashboard.html"><i class="fa fa-home"></i> Dashboard</a>
+             </li>
+            <li><a  href="#"><i class="fa fa-users"></i> User Management</a>
+              <ul class="sub-menu">
+                  <li><a href="manageuser.html">Manage User</a></li>
+                  <li><a href="createagent.html">Create Agent</a>
+                  </ul>
+            </li>
+            <li><a  href="#"><i class="fa fa-bar-chart-o"></i> E-Assessment</a>
+            <ul class="sub-menu">
+             <li><a href="#">Assessment</a>
+              <ul>
+              <li><a href="assessment.html">Assessment</a></li>
+                 <li><a href="asummary.html">Assessment Summary</a></li>
+              <li><a href="pendingassessment.html">Pending Assessment</a></li>
+                 <li><a href="viewassessment.html">View Assessment</a></li>
+              </ul>
+             </li>
+               <li><a href="#">Rules</a>
+              <ul>
+              <li><a href="createrules.html">Create Rules</a></li>
+                 <li><a href="bulkuploadrule.html">Bulk Upload Rules</a></li>
+              </ul>
+             </li>
+             <li><a href="#">MDA</a>
+            <ul>
+            <li><a href="createmda.html">Create MDA</a></li>
+               <li><a href="bulkuploadmda.html">Bulk Upload MDA</a></li>
+            <li><a href="managemda.html">Manage MDA</a></li>	
+            </ul>
+           </li>
+           <li><a href="#">Payment</a>
+          <ul>
+          <li><a href="createpaymentitem.html">Create Payment Item</a></li>
+             <li><a href="managepay.html">Manage Payment Item</a></li>
+          </ul>
+         </li>
+             </ul>
+            </li>
+            <li><a  href="#"><i class="fa fa-money"></i> Payments</a>
+              <ul class="sub-menu">
+                  <li><a href="#">User Payment</a>
+                   <ul>
+                   <li><a href="makepayment.html">Make Payment</a></li>
+                      <li><a href="paymenthistory.html">Payment History</a></li>
+                   </ul>
+                  </li>
+                    <li><a href="#">Agent Payment</a>
+                   <ul>
+                   <li><a href="agentwallet.html">Agent Wallet</a></li>
+                   </ul>
+                  </li>
+                  </ul>
+          </li>
+              <li><a  href="#"><i class="fa fa-exchange"></i> Returns Management</a>
+            <ul class="sub-menu">
+             <li><a href="userpaybehaviour.html">User Payment Behaviour</a></li>
+             <li><a href="besttaxpayers.html">Admin-Best Tax Payers</a>
+             </li>
+             </ul>
+            </li>
+            <li><a  href="#"><i class="fa fa-bandcamp"></i> Compliance and Dispute Resolution</a>
+              <ul class="sub-menu">
+                  <li><a href="#">Flag</a>
+                   <ul>
+                   <li><a href="addflag.html">Add Flag</a></li>
+                   </ul>
+                  </li>
+                    <li><a href="#">Ticket</a>
+                   <ul>
+                      <li><a href="createticket.html">Create Tickets</a></li>
+                   </ul>
+                  </li>
+                  </ul>
+          </li>
+            <li><a  href="#"><i class="fa fa-sitemap"></i> Reports</a>
+              <ul class="sub-menu">
+                  <li><a href="graphs.html">Graph</a></li>
+                  <li><a href="mynotifications.html">Notification</a>
+                  </li>
+                    <li><a href="managestakeholders.html">Manage Stakeholders</a>
+                  </li>
+                  </ul>
+          </li>
+            </ul>
+            </nav>
+  </div>
+    <div id="searchdiv">
+        <div id="childsearchdiv">
+            <div class="search">
+                <input type="text" class="searchTerm" placeholder="Which user are you looking for?">
+                <button type="submit" class="searchButton">
+                  <i class="fa fa-search"></i>
+               </button>
+             </div>
+             <div class="search2">
+                <select class="searchTerm2" name="" id="">
+                    <option value="">Ascending</option>
+                    <option value="">Descending</option>
+                    <option value="">Name</option>
+                    <option value="">Date Added</option>
+                </select>
+                <button type="submit" class="searchButton2">
+                  Sort
+                </button>
+             </div>
+             <div class="search3">
+                <select class="searchTerm3" name="" id="">
+                    <option value="">Show 5</option>
+                    <option value="" selected>Show 10</option>
+                    <option value="">Show 15</option>
+                    <option value="">Show 20</option>
+                    <option value="">Show 25</option>
+                </select>
+                <button type="submit" class="searchButton3">
+                    <i class="fa fa-refresh"></i>
+                </button>
+             </div>
+            </div>
+    </div>
+    <div class="tablediv">
+        <br>
+        <div class="limiter">
+            
+            <div class="container-table100">
+                
+                <div class="wrap-table100">
+                    <div class="tabledivhead">
+                        <label id="tblheadtext">
+                            Manage User
+                        </label>
+                        <label class="switch switch-slide">
+                            <input class="switch-input" type="checkbox" onclick="myFunction()" id="myCheck"/>
+                            <span class="switch-label" data-on="View User" data-off="Edit User"></span> 
+                            <span class="switch-handle"></span>
+                        </label>
+                    </div>
+                        <div class="table">
+    
+                            <div class="row header">
+                                <div class="cell">
+                                    #
+                                </div>
+                                <div class="cell">
+                                    TIN
+                                </div>
+                                <div class="cell">
+                                    First Name
+                                </div>
+                                <div class="cell">
+                                    Last Name
+                                </div>
+                                <div class="cell">
+                                    Phone Number
+                                </div>
+                                <div class="cell">
+                                    Action
+                                </div>
+                            </div>
+                            
+                            <div class="row">
+                                <div class="cell" data-title="#">
+                                    1
+                                </div>
+                                <div class="cell" data-title="TIN">
+                                    TIN47779568
+                                </div>
+                                <div class="cell" data-title="First Name">
+                                    Rogelio
+                                </div>
+                                <div class="cell" data-title="Last Name">
+                                    Copeland
+                                </div>
+                                <div class="cell" data-title="Phone Number">
+                                    080xxxxxxxx
+                                </div>
+                                <div class="cell" data-title="Action" id="actiondiv">
+                                    <a href="viewuser.html" id="userviewicon1" class="userviewicon" style="color: black;"><i style="font-size: 27px; width: 60px; height: 40px;" class="fa fa-long-arrow-right"></i></a>
+                                    
+                                    <a href="#" id="userediticon1" class="userediticon" style="display: none; color: black;"><i style="font-size: 27px; width: 60px; height: 40px;" class="fa fa-edit"></i></a>
+                                    <div id="adminActionDiv1" style="display: none;">
+                                        <a href="#" id="userappicon1" class="userappicon1" style="color: black;"><i style="font-size: 27px; background: green; color: white; padding: 3px 10px; border-radius: 20px;" class="fa fa-check"></i></a>
+                                        <a href="#" id="userrejicon1" class="userrejicon1" style="color: black;"><i style="font-size: 27px; background: tomato; color: white; padding: 3px 10px; border-radius: 20px;" class="fa fa-times"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+    
+                            <div class="row">
+                                <div class="cell" data-title="#">
+                                    2
+                                </div>
+                                <div class="cell" data-title="TIN">
+                                    TIN01849842
+                                </div>
+                                <div class="cell" data-title="First Name">
+                                    Harvey
+                                </div>
+                                <div class="cell" data-title="Last Name">
+                                    Sparks
+                                </div>
+                                <div class="cell" data-title="Phone Number">
+                                    080xxxxxxxx
+                                </div>
+                                <div class="cell" data-title="Action" id="actiondiv">
+                                    <a href="viewuser.html" id="userviewicon2" class="userviewicon" style="color: black;"><i style="font-size: 27px; width: 60px; height: 40px;" class="fa fa-long-arrow-right"></i></a>
+                                    
+                                    <a href="#" id="userediticon2" class="userediticon" style="display: none; color: black;"><i style="font-size: 27px; width: 60px; height: 40px;" class="fa fa-edit"></i></a>
+                                    <div id="adminActionDiv2" style="display: none;">
+                                        <a href="#" id="userappicon2" class="userappicon2" style="color: black;"><i style="font-size: 27px; background: green; color: white; padding: 3px 10px; border-radius: 20px;" class="fa fa-check"></i></a>
+                                        <a href="#" id="userrejicon2" class="userrejicon2" style="color: black;"><i style="font-size: 27px; background: tomato; color: white; padding: 3px 10px; border-radius: 20px;" class="fa fa-times"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+    
+                            <div class="row">
+                                <div class="cell" data-title="#">
+                                    3
+                                </div>
+                                <div class="cell" data-title="TIN">
+                                    TIN39639016
+                                </div>
+                                <div class="cell" data-title="First Name">
+                                    Donnie
+                                </div>
+                                <div class="cell" data-title="Last Name">
+                                    Murphy
+                                </div>
+                                <div class="cell" data-title="Phone Number">
+                                    080xxxxxxxx
+                                </div>
+                                <div class="cell" data-title="Action" id="actiondiv">
+                                    <a href="viewuser.html" id="userviewicon3" class="userviewicon" style="color: black;"><i style="font-size: 27px; width: 60px; height: 40px;" class="fa fa-long-arrow-right"></i></a>
+                                    
+                                    <a href="#" id="userediticon3" class="userediticon" style="display: none; color: black;"><i style="font-size: 27px; width: 60px; height: 40px;" class="fa fa-edit"></i></a>
+                                    <div id="adminActionDiv3" style="display: none;">
+                                        <a href="#" id="userappicon3" class="userappicon3" style="color: black;"><i style="font-size: 27px; background: green; color: white; padding: 3px 10px; border-radius: 20px;" class="fa fa-check"></i></a>
+                                        <a href="#" id="userrejicon3" class="userrejicon3" style="color: black;"><i style="font-size: 27px; background: tomato; color: white; padding: 3px 10px; border-radius: 20px;" class="fa fa-times"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+    
+                            <div class="row">
+                                <div class="cell" data-title="#">
+                                    4
+                                </div>
+                                <div class="cell" data-title="TIN">
+                                    TIN99713576
+                                </div>
+                                <div class="cell" data-title="First Name">
+                                    Stella
+                                </div>
+                                <div class="cell" data-title="Last Name">
+                                    Norton
+                                </div>
+                                <div class="cell" data-title="Phone Number">
+                                    080xxxxxxxx
+                                </div>
+                                <div class="cell" data-title="Action" id="actiondiv">
+                                    <a href="viewuser.html" id="userviewicon4" class="userviewicon" style="color: black;"><i style="font-size: 27px; width: 60px; height: 40px;" class="fa fa-long-arrow-right"></i></a>
+                                    
+                                    <a href="#" id="userediticon4" class="userediticon" style="display: none; color: black;"><i style="font-size: 27px; width: 60px; height: 40px;" class="fa fa-edit"></i></a>
+                                    <div id="adminActionDiv4" style="display: none;">
+                                        <a href="#" id="userappicon4" class="userappicon4" style="color: black;"><i style="font-size: 27px; background: green; color: white; padding: 3px 10px; border-radius: 20px;" class="fa fa-check"></i></a>
+                                        <a href="#" id="userrejicon4" class="userrejicon4" style="color: black;"><i style="font-size: 27px; background: tomato; color: white; padding: 3px 10px; border-radius: 20px;" class="fa fa-times"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+    
+                            <div class="row">
+                                <div class="cell" data-title="#">
+                                    5
+                                </div>
+                                <div class="cell" data-title="TIN">
+                                    TIN46047812
+                                </div>
+                                <div class="cell" data-title="First Name">
+                                    Johnathan
+                                </div>
+                                <div class="cell" data-title="Last Name">
+                                    Meyer
+                                </div>
+                                <div class="cell" data-title="Phone Number">
+                                    080xxxxxxxx
+                                </div>
+                                <div class="cell" data-title="Action" id="actiondiv">
+                                    <a href="viewuser.html" id="userviewicon5" class="userviewicon" style="color: black;"><i style="font-size: 27px; width: 60px; height: 40px;" class="fa fa-long-arrow-right"></i></a>
+                                    
+                                    <a href="#" id="userediticon5" class="userediticon" style="display: none; color: black;"><i style="font-size: 27px; width: 60px; height: 40px;" class="fa fa-edit"></i></a>
+                                    <div id="adminActionDiv5" style="display: none;">
+                                        <a href="#" id="userappicon5" class="userappicon5" style="color: black;"><i style="font-size: 27px; background: green; color: white; padding: 3px 10px; border-radius: 20px;" class="fa fa-check"></i></a>
+                                        <a href="#" id="userrejicon5" class="userrejicon5" style="color: black;"><i style="font-size: 27px; background: tomato; color: white; padding: 3px 10px; border-radius: 20px;" class="fa fa-times"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+    
+                            <div class="row">
+                                <div class="cell" data-title="#">
+                                    6
+                                </div>
+                                <div class="cell" data-title="TIN">
+                                    TIN80487176
+                                </div>
+                                <div class="cell" data-title="First Name">
+                                    Joann
+                                </div>
+                                <div class="cell" data-title="Last Name">
+                                    Fleming
+                                </div>
+                                <div class="cell" data-title="Phone Number">
+                                    080xxxxxxxx
+                                </div>
+                                <div class="cell" data-title="Action" id="actiondiv">
+                                    <a href="viewuser.html" id="userviewicon6" class="userviewicon" style="color: black;"><i style="font-size: 27px; width: 60px; height: 40px;" class="fa fa-long-arrow-right"></i></a>
+                                    
+                                    <a href="#" id="userediticon6" class="userediticon" style="display: none; color: black;"><i style="font-size: 27px; width: 60px; height: 40px;" class="fa fa-edit"></i></a>
+                                    <div id="adminActionDiv6" style="display: none;">
+                                        <a href="#" id="userappicon6" class="userappicon6" style="color: black;"><i style="font-size: 27px; background: green; color: white; padding: 3px 10px; border-radius: 20px;" class="fa fa-check"></i></a>
+                                        <a href="#" id="userrejicon6" class="userrejicon6" style="color: black;"><i style="font-size: 27px; background: tomato; color: white; padding: 3px 10px; border-radius: 20px;" class="fa fa-times"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+    
+                            <div class="row">
+                                <div class="cell" data-title="#">
+                                    7
+                                </div>
+                                <div class="cell" data-title="TIN">
+                                    TIN03727001
+                                </div>
+                                <div class="cell" data-title="First Name">
+                                    Douglas
+                                </div>
+                                <div class="cell" data-title="Last Name">
+                                    Gregory
+                                </div>
+                                <div class="cell" data-title="Phone Number">
+                                    080xxxxxxxx
+                                </div>
+                                <div class="cell" data-title="Action" id="actiondiv">
+                                    <a href="viewuser.html" id="userviewicon7" class="userviewicon" style="color: black;"><i style="font-size: 27px; width: 60px; height: 40px;" class="fa fa-long-arrow-right"></i></a>
+                                    
+                                    <a href="#" id="userediticon7" class="userediticon" style="display: none; color: black;"><i style="font-size: 27px; width: 60px; height: 40px;" class="fa fa-edit"></i></a>
+                                    <div id="adminActionDiv7" style="display: none;">
+                                        <a href="#" id="userappicon7" class="userappicon7" style="color: black;"><i style="font-size: 27px; background: green; color: white; padding: 3px 10px; border-radius: 20px;" class="fa fa-check"></i></a>
+                                        <a href="#" id="userrejicon7" class="userrejicon7" style="color: black;"><i style="font-size: 27px; background: tomato; color: white; padding: 3px 10px; border-radius: 20px;" class="fa fa-times"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+    
+                            <div class="row">
+                                <div class="cell" data-title="#">
+                                    8
+                                </div>
+                                <div class="cell" data-title="TIN">
+                                    TIN80891696
+                                </div>
+                                <div class="cell" data-title="First Name">
+                                    Ada
+                                </div>
+                                <div class="cell" data-title="Last Name">
+                                    Richardson
+                                </div>
+                                <div class="cell" data-title="Phone Number">
+                                    080xxxxxxxx
+                                </div>
+                                <div class="cell" data-title="Action" id="actiondiv">
+                                    <a href="viewuser.html" id="userviewicon8" class="userviewicon" style="color: black;"><i style="font-size: 27px; width: 60px; height: 40px;" class="fa fa-long-arrow-right"></i></a>
+                                    
+                                    <a href="#" id="userediticon8" class="userediticon" style="display: none; color: black;"><i style="font-size: 27px; width: 60px; height: 40px;" class="fa fa-edit"></i></a>
+                                    <div id="adminActionDiv8" style="display: none;">
+                                        <a href="#" id="userappicon8" class="userappicon8" style="color: black;"><i style="font-size: 27px; background: green; color: white; padding: 3px 10px; border-radius: 20px;" class="fa fa-check"></i></a>
+                                        <a href="#" id="userrejicon8" class="userrejicon8" style="color: black;"><i style="font-size: 27px; background: tomato; color: white; padding: 3px 10px; border-radius: 20px;" class="fa fa-times"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+    
+                            <div class="row">
+                                <div class="cell" data-title="#">
+                                    9
+                                </div>
+                                <div class="cell" data-title="TIN">
+                                    TIN75955536
+                                </div>
+                                <div class="cell" data-title="First Name">
+                                    Derrick
+                                </div>
+                                <div class="cell" data-title="Last Name">
+                                    Jimenez
+                                </div>
+                                <div class="cell" data-title="Phone Number">
+                                    080xxxxxxxx
+                                </div>
+                                <div class="cell" data-title="Action" id="actiondiv">
+                                    <a href="viewuser.html" id="userviewicon9" class="userviewicon" style="color: black;"><i style="font-size: 27px; width: 60px; height: 40px;" class="fa fa-long-arrow-right"></i></a>
+                                    
+                                    <a href="#" id="userediticon9" class="userediticon" style="display: none; color: black;"><i style="font-size: 27px; width: 60px; height: 40px;" class="fa fa-edit"></i></a>
+                                    <div id="adminActionDiv9" style="display: none;">
+                                        <a href="#" id="userappicon9" class="userappicon9" style="color: black;"><i style="font-size: 27px; background: green; color: white; padding: 3px 10px; border-radius: 20px;" class="fa fa-check"></i></a>
+                                        <a href="#" id="userrejicon9" class="userrejicon9" style="color: black;"><i style="font-size: 27px; background: tomato; color: white; padding: 3px 10px; border-radius: 20px;" class="fa fa-times"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+    
+                            <div class="row">
+                                <div class="cell" data-title="#">
+                                    10
+                                </div>
+                                <div class="cell" data-title="TIN">
+                                    TIN64206076
+                                </div>
+                                <div class="cell" data-title="First Name">
+                                    Pamela
+                                </div>
+                                <div class="cell" data-title="Last Name">
+                                    Barnes
+                                </div>
+                                <div class="cell" data-title="Phone Number">
+                                    080xxxxxxxx
+                                </div>
+                                <div class="cell" data-title="Action" id="actiondiv">
+                                    <a href="viewuser.html" id="userviewicon10" class="userviewicon" style="color: black;"><i style="font-size: 27px; width: 60px; height: 40px;" class="fa fa-long-arrow-right"></i></a>
+                                    
+                                    <a href="#" id="userediticon10" class="userediticon" style="display: none; color: black;"><i style="font-size: 27px; width: 60px; height: 40px;" class="fa fa-edit"></i></a>
+                                    <div id="adminActionDiv10" style="display: none;">
+                                        <a href="#" id="userappicon10" class="userappicon10" style="color: black;"><i style="font-size: 27px; background: green; color: white; padding: 3px 10px; border-radius: 20px;" class="fa fa-check"></i></a>
+                                        <a href="#" id="userrejicon10" class="userrejicon10" style="color: black;"><i style="font-size: 27px; background: tomato; color: white; padding: 3px 10px; border-radius: 20px;" class="fa fa-times"></i></a>
+                                    </div>
+                                    
+                                </div>
+                            </div>
+                        </div>
+                        
+                </div>
+            </div>
+            <div class="content_detail__pagination cdp" actpage="1">
+                <a href="#!-1" class="cdp_i">prev</a>
+                <a href="#!1" class="cdp_i">1</a>
+                <a href="#!2" class="cdp_i">2</a>
+                <a href="#!3" class="cdp_i">3</a>
+                <a href="#!4" class="cdp_i">4</a>
+                <a href="#!5" class="cdp_i">5</a>
+                <a href="#!6" class="cdp_i">6</a>
+                <a href="#!7" class="cdp_i">7</a>
+                <a href="#!8" class="cdp_i">8</a>
+                <a href="#!9" class="cdp_i">9</a>
+                <a href="#!10" class="cdp_i">10</a>
+                <a href="#!11" class="cdp_i">11</a>
+                <a href="#!12" class="cdp_i">12</a>
+                <a href="#!13" class="cdp_i">13</a>
+                <a href="#!14" class="cdp_i">14</a>
+                <a href="#!15" class="cdp_i">15</a>
+                <a href="#!16" class="cdp_i">16</a>
+                <a href="#!17" class="cdp_i">17</a>
+                <a href="#!18" class="cdp_i">18</a>
+                <a href="#!19" class="cdp_i">19</a>
+                <a href="#!+1" class="cdp_i">next</a>
+            </div>
+        </div>
+    
+    </div>
+    <div class="footer">
+        <div class="contain">
+        <div class="col">
+          <h1>Company</h1>
+          <ul>
+            <li onclick="window.location.href='ventures234.com'">Ventures 234</li>
+          </ul>
+        </div>
+        <div class="col">
+          <h1>Dashboard</h1>
+          <ul>
+            <li onclick="window.location.href='manageuser.html'">Manage User</li>
+            <li onclick="window.location.href='createagent.html'">Create Agent</li>
+            <li onclick="window.location.href='createrules.html'">Create Rules</li>
+            <li onclick="window.location.href='createmda.html'">Create MDA</li>
+            <li onclick="window.location.href='createpaymentitem.html'">Create Payment Items</li>
+            <li onclick="window.location.href='addstakeholder.html'">Add Stakeholders</li>
+          </ul>
+        </div>
+        <div class="col">
+          <h1>Returns Management</h1>
+          <ul>
+            <li onclick="window.location.href='userpaybehaviour.html'">Payment Behaviour</li>
+            <li onclick="window.location.href='besttaxpayers.html'">Best tax Payers</li>
+          </ul>
+        </div>
+        <div class="col">
+          <h1>Resources</h1>
+          <ul>
+            <li>This Resource</li>
+            <li>That Resource</li>
+            <li>The Other Resource</li>
+          </ul>
+        </div>
+        <div class="col">
+          <h1>Support</h1>
+          <ul>
+            <li>Contact us</li>
+            <li>Web chat</li>
+            <li>Raise ticket</li>
+          </ul>
+        </div>
+        <div class="col social">
+          <h1>Social</h1>
+          <ul>
+            <li><i class="fa fa-facebook"></i></li>
+            <li><i class="fa fa-twitter"></i></li>
+            <li><i class="fa fa-telegram"></i></li>
+            <li><i class="fa fa-instagram"></i></li>
+          </ul>
+        </div>
+      <div class="clearfix"></div>
+      </div>
+      </div>
+</body>
+</html>
